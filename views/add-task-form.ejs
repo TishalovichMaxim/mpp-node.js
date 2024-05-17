@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Tasks</title>
+    </head>
+    <body>
+        <%- include('./sub/navbar.ejs'); -%>
+        <form action="/tasks" method="post">
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" name="name" required />
+            </div>
+            <div>
+                <label for="description">Description: </label>
+                <input type="text" name="description" required />
+            </div>
+            <div>
+                <label for="status">Status: </label>
+                <input type="text" name="status" required />
+            </div>
+            <div>
+                <input type="submit" value="Add" />
+            </div>
+        </form>
+    </body>
+</html>
+
