@@ -13,6 +13,10 @@ const tasks = [
     new Task("Task3", "Desc3", TaskStatus.DONE)
 ]
 
+app.get('/sign-in', (req, res) => {
+    res.render('sign-in.ejs')
+})
+
 app.get('/tasks', (req, res) => {
     res.render('tasks.ejs', {tasks: tasks})
 })
