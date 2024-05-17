@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Tasks</title>
+    </head>
+    <body>
+        <h1>
+            Tasks
+        </h1>
+        <div>
+            <% tasks.forEach(function(task){ %>
+                <%- include('./sub/task.ejs', {task: task}); -%>
+            <% }); %>
+        </div>
+    </body>
+</html>
+
