@@ -5,10 +5,11 @@ const TaskStatus = Object.freeze({
 })
 
 class Task {
-    constructor(name, description, status) {
+    constructor(name, description, status, expectedCompletionDate) {
         this.name = name
         this.description = description
         this.status = status
+        this.expectedCompletionDate = expectedCompletionDate
     }
 }
 
