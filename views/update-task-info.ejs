@@ -7,19 +7,23 @@
     </head>
     <body>
         <%- include('./sub/navbar.ejs'); -%>
-        <form action="/tasks" method="post">
+
+        <form action="/tasks/<%= task.id%>/update" method="post">
+            <div>
+                Update task info:
+            </div>
             <div>
                 <label for="name">Name: </label>
-                <input type="text" name="name" required />
+                <input type="text" name="name" value="<%= task.name%>" required />
             </div>
             <div>
                 <label for="description">Description: </label>
-                <input type="text" name="description" required />
+                <input type="text" name="description" value="<%= task.description%>" required />
             </div>
             <div>
                 <label for="status-select">Task status:</label>
 
-                <select name="status" id="status-select">
+                <select name="statusId" id="status-select">
                     <option value="0">TODO</option>
                     <option value="1">Doing</option>
                     <option value="2">Done</option>
@@ -27,7 +31,7 @@
             </div>
             <div>
                 <label for="start">Completion date: </label>
-                <input type="date" id="completionDate" name="expected-completion-date" required />
+                <input type="date" id="completionDate" name="expectedCompletionDate" value="<%= task.expectedCompletionDate %>" required />
             </div>
             <div>
                 <input type="submit" value="Update" />
