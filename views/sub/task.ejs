@@ -1,7 +1,9 @@
 <div>
-    <div>
-        Task
-    </div>
+    <a href="/tasks/<%= task.id %>">
+        <div>
+            Task
+        </div>
+    </a>
     <ul>
         <li>
             <%= task.name %>
@@ -10,7 +12,7 @@
             <%= task.description %>
         </li>
         <li>
-            <%= task.status %>
+            <%= task.status() %>
         </li>
         <li>
             <%= task.expectedCompletionDate %>
