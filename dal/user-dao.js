@@ -43,6 +43,21 @@ class UserDao {
         return this.rowToUser(queryRes.rows[0])
     }
 
+    async getByLogin(login) {
+        const queryRes = await this.pool.query(
+            'SELECT * FROM "user" WHERE login = $1',
+            [login]
+        )
+
+        const nRows = queryRes.rows.length
+
+        if (nRows == 0) {
+            return null
+        }
+
+        return this.rowToUser(queryRes.rows[0])
+    }
+
 }
 
 export { UserDao }
