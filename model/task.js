@@ -11,12 +11,15 @@ const idToStatus = new Map([
 ])
 
 class TaskStatusMapper {
+
     static map(id) {
         return idToStatus.get(id)
     }
+
 }
 
 class Task {
+
     constructor(id, name, description, statusId, expectedCompletionDate) {
         this.id = id
         this.name = name
@@ -28,6 +31,7 @@ class Task {
     status() {
         return TaskStatusMapper.map(this.statusId)
     }
+
 }
 
 export { Task, TaskStatus }
